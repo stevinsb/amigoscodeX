@@ -1,7 +1,11 @@
 #include<stdio.h>
-float loc=23.794950;
-float lat=86.381600;
+float loc=23.794950;//Declaring a longitude value
+float lat=86.381600;//Declaring a latitude value
 float oxy=0.48;
+#include <stdlib.h>
+#include <time.h>
+//Package for time, ie random number generating function
+
 
 
  typedef struct{
@@ -53,5 +57,4 @@ else{
         printf("Proceed with mining in this location");
     }
 }
-if(oxy>0.1||oxy<1)
 }
