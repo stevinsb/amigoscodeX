@@ -7,27 +7,24 @@ float lat=86.381600;//Declaring a latitude value
 //Package for time, ie random number generating function
 float oxy()
 {
-    
-  
         float num = (rand() %(100 - 10 + 1)) + 10;
         return num*0.01;
     
 }
-
-
 
  typedef struct{
     float latitude;
     float longitude;
  }loc2;
 typedef struct{
-    char id[20];
+    int id;
     int password;
  }log2;
 
 
 
 int main(){
+    int i,loginid,loginpassword;
     int flag=0;
     loc2 loc_mined[50];
     log2 login[50];
@@ -37,13 +34,14 @@ int main(){
     loc_mined[1].longitude=86.38170;
     loc_mined[2].latitude=23.79510;
     loc_mined[2].longitude=86.381690;
-    login[0].id="bccl user1";
+    login[0].id=12345;
     login[0].password=100071;
-   login[1].id="bccl user2";
-    login[1].password=100073;
-   login[2].id="bccl user3";
+   login[1].id=1234;
+    login[1].password=1234;
+   login[2].id=1456;
     login[2].password=100074;
-    int i=0;
+    printf("enter id and password");
+    scanf("%d%d",&loginid,&loginpassword);
     for(i=0;i<3;i++){
         if( login[i].id==loginid && login[i].password==loginpassword ){
             printf("Login successful \n");
@@ -64,18 +62,18 @@ else{
         else
         printf("Proceed with mining in this location");
     }
-}
+//}
 if(oxy()>=0.4&&oxy()<=0.5)
 {
- printf("engine running at optimum performance \n")
+ printf("engine running at optimum performance \n");
 }
 else if(oxy()>=0.1&&oxy()<=0.4)
 {
-    printf("engine running too rich,adjust air intake for providing more air\n")
+    printf("engine running too rich,adjust air intake for providing more air\n");
 }
 else if(oxy()>=0.5&&oxy()<=1)
 {
-   printf("engine running too lean,adjust intake manifold for choking air flow\n") 
+   printf("engine running too lean,adjust intake manifold for choking air flow\n"); 
 }
 else{
     printf("sensor faulty");
@@ -165,7 +163,7 @@ Get the GPS's raw accelerometer values.
 //Range given in metres
  
 //Let the output range be in r
-const r=50;// in metres 
+int r=50;// in metres 
 if(r>50)
 {
     printf("Standby\n"); 
@@ -175,25 +173,28 @@ else if(r<50&&r>40)
     printf("Prepare to unload\n");
 }
 else if(r<30) {
-printf("Prssurize hydraulic pumps and take slack");
+printf("Pressurize hydraulic pumps and take slack");
 }
 //Max load in shovel
-const max_tension=15;// value in metric tonnes
+int max_tension=15;// value in metric tonnes
 int x=16;// defining the inputted tension value, to be taken 
 if(x<max_tension)
   printf("Inefficient operation");
 else if(x==max_tension)
   printf("take care not to overload");
 else if(x>max_tension)
-  printf("!!!!Danger!!! LINE COULD BREAK")
+  printf("!!!!Danger!!! LINE COULD BREAK");
 
 // Taking input from ground proximity sensor
 //This procedure is done to approximate the depth
 // Similar principle of operation of GPSW systems in aircraft collision systems
 
-
-
-
-
-
+int m=20;// inputting value from the ground proximity sensor
+int n=32;// shovel depth
+int depth=n-m;
+if(n-m>10)
+ printf("efficient operation\n");
+else 
+ printf("could load more\n");  
+}
 }
